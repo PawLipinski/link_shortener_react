@@ -1,8 +1,7 @@
 import React from 'react';
 
 import Pagination from '../components/Pagination';
-import Searchbar from '../components/Searchbar';
-import StopsTable from '../components/LinksTable';
+import LinksTable from '../components/LinksTable';
 import { CFG_HTTP } from '../cfg/cfg_http';
 import { UtilsApi } from '../utils/utils_api';
 
@@ -48,11 +47,10 @@ class LinksContainer extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Searchbar onSearch={this.fetchLinks} />
         <Pagination currentPage={this.state.currentPage}
                     pagesLimit={this.state.pagesLimit}
                     onPageChange={this.handlePageChange} />
-        <StopsTable links={this.state.links} />
+        <LinksTable links={this.state.links} />
       </React.Fragment>
     );
   }
